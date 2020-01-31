@@ -1,6 +1,6 @@
 # leopard
 
-A simple tool for presenting data analysis in a browser based environment, without requiring a server.
+A simple tool for presenting data analysis in an html file.
 
 ## Data format
 
