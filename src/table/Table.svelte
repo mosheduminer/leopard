@@ -3,13 +3,11 @@
   import Head from './Head.svelte'
   export let labels, table, searchKey
 
-  $: data = table.filter((row) => {
-    return row.reduce((accum, curr) => {
-      if (searchKey.test(curr) || accum) {
-        return true
-      }
+  $: data = searchKey.toString() !== "/(?:)/" ? table.filter((row) => {
+    return row.some(el => {
+      return searchKey.test(el)
     }, false)
-  })
+  }) : table
 </script>
 
 <table>
